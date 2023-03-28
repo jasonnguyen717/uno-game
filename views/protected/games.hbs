@@ -1,0 +1,21 @@
+<script src="/javascripts/games/join.js" defer></script>
+<h1 class="title">Room {{title}}</h1>
+{{!-- <p>Game page id : {{id}}</p> --}}
+
+
+
+{{#if_cond count "==" required_count}}
+  <div id="game-table">
+    <div class="draw-pile">
+      <div class="card special"></div>
+      </div>
+      <div id="discard">
+        <div class="card"></div>
+      </div>
+    </div>
+  </div>
+{{else}}
+  
+{{/if_cond}}
+
+<div id="waiting">Waiting on players {{count}} of {{required_count}}</div>

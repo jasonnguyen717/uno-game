@@ -1,0 +1,30 @@
+{{! <div class="nav">
+  <div class="nav-center">
+    <a href="/"><img
+        src="/images/unologo.png"
+        width="95px"
+        alt="logo"
+      /></a>
+  </div>
+
+  <div class="nav-right">
+    <a href="/lobby">Lobby</a>
+    <a href="/auth/login">Log in</a>
+    <a href="/auth/signup">Register</a>
+  </div>
+</div> }}
+<a href="/"><img src="/images/unologo.png" width="95px" alt="logo" /></a>
+{{#if authenticated}}
+  <a class="text-decoration-none link-dark fw-bold p-2" href="/auth/logout">Log
+    Out</a>
+  {{!-- <h3>{{authenticated}}</h3> --}}
+  <p>Welcome back {{username}}!</p>
+{{else}}
+  <a class="text-decoration-none link-dark fw-bold p-2" href="/lobby">Lobby</a>
+  <a class="text-decoration-none link-dark fw-bold p-2" href="/auth/login">Log
+    in</a>
+  <a
+    class="text-decoration-none link-dark fw-bold p-2"
+    href="/auth/signup"
+  >Register</a>
+{{/if}}

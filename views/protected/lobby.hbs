@@ -1,0 +1,67 @@
+<h3 class="title">Lobby</h3>
+
+
+
+
+<div class="create-game-container">
+
+<form action="/games/create" method="post">
+    <input type="text" id="totalPlayers" name="totalPlayers" placeholder="Enter # of players">
+    <input
+      type="text"
+      id="title"
+      name="title"
+      placeholder="Enter title for new game(optional)"
+    />
+    <button type="submit" id="create-game" class="btn btn-primary">Create New Game</button>
+  </form>
+</div>
+
+<center><hr class="break" /></center>
+
+<div class="row">
+  <div class="column">
+    <h4 class="title">Open Games</h4>
+    <ul>
+      {{#each games.joinable}}
+        <li>
+          <div class="grid-open-game-container">
+          <span class="gametitles"> {{this.title}}</span>
+          <form action="/games/{{this.id}}/join" method="POST" target="_blank">
+            <button
+              type="submit"
+              class="join-btn"
+              class="btn btn-primary"
+              value="join-game"
+            >JOIN GAME</button>
+            </div>
+          </form>
+        </li>
+      {{/each}}
+    </ul>
+
+  </div>
+
+<div class="column">
+  <h4 class="title">My Games</h4>
+  {{!-- <div id="games-list"> --}}
+    <ul id="active-games">
+      {{#each games.active}}
+        <li>{{!-- <a href="/games/{{this.id}}" target="_blank">{{this.title}}</a> --}}
+        <div class="grid-open-game-container">
+        <span class="gametitles">{{this.title}}</span>
+        <a href="/games/{{this.id}}" target="_blank">
+            <button
+              class="join-btn"
+              class="btn btn-primary"
+            >JOIN GAME</button>
+            </a>
+            </div>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>
+</div>
+
+<script src="/javascripts/game-management.js" defer></script>

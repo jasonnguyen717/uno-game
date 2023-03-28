@@ -1,0 +1,36 @@
+<form method="POST" action="/auth/signup" id="signup-form">
+  <h3 class="title">Sign Up</h3>
+  <div class="error-message">{{error}}</div>
+
+  <div class="mb-3 mt-3">
+    <input class="input-box" placeholder="Username" name="username" />
+  </div>
+
+  <div class="mb-3 mt-3">
+    <input class="input-box" type="email" placeholder="Email" name="email" />
+  </div>
+
+  <div class="mt-3">
+    <input
+      class="input-box"
+      type="password"
+      placeholder="Password"
+      name="password"
+    />
+  </div>
+
+  <div class="d-grid mx-auto mt-4 pt-2">
+    <button
+      type="submit"
+      id="signin-btn"
+      class="btn btn-primary"
+      value="login"
+    >Create Account</button>
+  </div>
+</form>
+
+<br />
+
+<div id="notreg">
+  <p>Already have an account? <a href="/auth/login">Log In!</a></p>
+</div>
